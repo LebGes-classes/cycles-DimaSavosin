@@ -85,31 +85,33 @@ public class massiv {
         System.out.println("вариант 1 графики");
         Scanner scanner1 = new Scanner(System.in);
         double x = scanner1.nextDouble();
-        double a = scanner1.nextDouble();
-        double b = scanner1.nextDouble();
+        double a = scanner1.nextDouble();// до чего идем
+        double b = scanner1.nextDouble();// шаг
         double y;
         System.out.println("Значение аргумента  Значение функции");
         while (x<a){
-            if (x>=-9 && x<-6){
-                y = -(Math.pow(-(x*x)-12*x-27,0.5));
-
-            } else if (x > -6 && x <= -3) {
-                y = x+3;
-            }
-            else if (x>-3 && x<=0){
-                y = Math.pow(-(x*x)+9,0.5);
-            }
-            else if (x>0 && x<=3){
-                y=-(x)+3;
-            }
-            else{
-                y=0.5+(x-3);
-            }
-            System.out.println(x+"    "+y);
+            System.out.println(x+"    "+formulas(x));
             x+=b;
         }
+    }
+    public static double formulas(double x){
+        if (x>=-9 && x<-6){
+            return -(Math.pow(-(x*x)-12*x-27,0.5));
 
-
+        } else if (x > -6 && x <= -3) {
+            return  x+3;
+        }
+        else if (x>-3 && x<=0){
+            return Math.pow(-(x*x)+9,0.5);
+        }
+        else if (x>0 && x<=3){
+            return -(x)+3;
+        }
+        else{
+            return 0.5+(x-3);
+        }
     }
 }
+
+
 
